@@ -1,3 +1,4 @@
+
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const overlay = document.getElementById('overlay');
