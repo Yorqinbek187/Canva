@@ -41,6 +41,7 @@
 .rasm__main-title {
     font-size: 64px;
     line-height: 1.05;
+    margin-right: 430px;
     color: #1f2233;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -73,7 +74,7 @@
 }
 
 .rasm__title1 {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1.15;
     color: #141414;
     margin-bottom: 20px;
@@ -81,7 +82,7 @@
 }
 
 .rasm__text1 {
-    font-size: 22px;
+    font-size: 21px;
     line-height: 1.6;
     color: #314772;
 }
@@ -97,16 +98,19 @@
     height: 410px;
     border-radius: 50%;
     position: relative;
+
     background: conic-gradient(from 0deg,
-            #e6e8f5 0% 23.6%,
-            #ffffff 23.6% 25%,
-            #e6e8f5 25% 48.6%,
-            #ffffff 48.6% 50%,
-            #e6e8f5 50% 73.6%,
-            #ffffff 73.6% 75%,
-            #e6e8f5 75% 98.6%,
-            #ffffff 98.6% 100%);
-    border: 1px solid #d8dced;
+            #e6e8f5 0% 24.5%,
+            #ffffff 24.5% 25.5%,
+            #e6e8f5 25.5% 49%,
+            #ffffff 48.5% 50%,
+            #e6e8f5 50% 74.3%,
+            #ffffff 74.3% 75.3%,
+            #e6e8f5 75.3% 99.3%,
+            #ffffff 99.3% 100%
+    );
+
+    border: 1px solid #9e9e9e;
 }
 
 .rasm__diagram::before {
@@ -115,7 +119,7 @@
     inset: 142px;
     background-color: #f8f8fd;
     border-radius: 50%;
-    border: 1px solid #d8dced;
+    border: 1px solid #d7d7d7;
 }
 
 .rasm__icon {
@@ -234,4 +238,153 @@
     .rasm__icon--left {
         left: 54px;
     }
+}
+
+.main {
+    padding: 90px 0 110px;
+}
+
+.main__container {
+    display: grid;
+    grid-template-columns: minmax(320px, 470px) 1fr;
+    align-items: stretch;
+    overflow: hidden;
+    /* box-shadow: 0 22px 65px rgba(30, 45, 90, 0.08); */
+}
+
+.main__image {
+    position: relative;
+    min-height: 600px;
+    /* background: linear-gradient(180deg, #89d7e3 0%, #b8cef7 100%); */
+}
+
+.main__img {
+    width: 80%;
+    height: 70%;
+    object-fit: cover;
+    display: block;
+}
+
+.main__img[src=""] {
+    opacity: 0;
+}
+
+.main__placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 28px);
+}
+
+.main__content {
+    padding: 40px 48px 34px;
+}
+
+.main__title {
+    font-size: 40px;
+    line-height: 1.06;
+    color: #1f2333;
+    margin-bottom: 34px;
+    font-weight: 700;
+}
+
+.main__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 42px 34px;
+}
+
+.main__card {
+    max-width: 255px;
+}
+
+.main__icon {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a63f6;
+    margin-bottom: 18px;
+}
+
+.main__card-title {
+    font-size: 20px;
+    line-height: 1.25;
+    color: #23263a;
+    margin-bottom: 14px;
+    font-weight: 700;
+}
+
+.main__text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #2f3554;
+}
+
+@media (max-width: 1200px) {
+    .main__container {
+        grid-template-columns: minmax(280px, 400px) 1fr;
+    }
+
+    .main__content {
+        padding: 34px 32px;
+    }
+
+    .main__title {
+        font-size: 46px;
+    }
+
+    .main__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main__card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 70px 0 80px;
+    }
+
+    .main__container {
+        grid-template-columns: 1fr;
+    }
+
+    .main__image {
+        min-height: 360px;
+    }
+
+    .main__content {
+        padding: 30px 24px;
+    }
+
+    .main__title {
+        font-size: 36px;
+        margin-bottom: 26px;
+    }
+
+    .main__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .main__text {
+        font-size: 16px;
+    }
+}
+.icon_i{
+    font-size: 30px;
 }
