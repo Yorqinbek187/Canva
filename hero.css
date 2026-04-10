@@ -1,4 +1,3 @@
-
 .section {
     padding: 60px 0;
 }
@@ -60,8 +59,6 @@
 }
 
 .section__btn1:hover {
-    background: #000;
-    color: white;
     transform: translateY(-2px);
 }
 
@@ -538,6 +535,7 @@
 }
 
 @media (max-width: 768px) {
+
     .shablon__title1,
     .design__text12 {
         font-size: 34px;
@@ -575,11 +573,12 @@
 }
 
 @media (max-width: 370px) {
+
     .shablon__title1,
     .design__text12 {
         font-size: 28px;
         margin-top: 40px;
-        margin-bottom: 24px;
+        margin-bottom: 30px;
         text-align: left;
     }
 
@@ -634,4 +633,3 @@
         border-radius: 18px;
     }
 }
-
