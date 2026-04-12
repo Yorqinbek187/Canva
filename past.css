@@ -551,10 +551,16 @@
     -webkit-background-clip: text;
     color: transparent;
 }
-
+.slayd__container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
 .slayd__list {
     display: flex;
     flex-direction: column;
+    margin: auto;
+    max-width: 1200px;
     gap: 0;
     list-style: none;
     position: relative;
@@ -562,7 +568,7 @@
 
 .slayd__item {
     list-style: none;
-    position: relative;
+    /* position: relative; */
     transition: all 0.25s ease;
 }
 
@@ -664,6 +670,7 @@
 .slayd__note {
     font-size: 16px;
     color: #2c3e66;
+    max-width: 1200px;
     line-height: 1.75;
     margin-left: auto;
     margin-right: auto;

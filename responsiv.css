@@ -1,0 +1,666 @@
+.dashboard-page {
+    overflow-x: hidden;
+}
+
+.dashboard-page .container {
+    width: 100%;
+}
+
+.dashboard-page .section,
+.dashboard-page .shablon,
+.dashboard-page .design,
+.dashboard-page .matn,
+.dashboard-page .animation,
+.dashboard-page .slayd,
+.dashboard-page .hamkor,
+.dashboard-page .taqdimot,
+.dashboard-page .rasm,
+.dashboard-page .share-guide,
+.dashboard-page .compare-footer {
+    scroll-margin-top: 90px;
+}
+
+.dashboard-page .section__container,
+.dashboard-page .shablon__container,
+.dashboard-page .design__container,
+.dashboard-page .matn__container,
+.dashboard-page .animation__container,
+.dashboard-page .slayd .container,
+.dashboard-page .hamkor__container,
+.dashboard-page .taqdimot__container,
+.dashboard-page .rasm__container,
+.dashboard-page .share-guide__container,
+.dashboard-page .compare-footer__container {
+    max-width: 100%;
+}
+
+.dashboard-page .matn__list {
+    gap: 28px;
+}
+
+.dashboard-page .matn__block {
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 14px 34px rgba(98, 85, 126, 0.08);
+}
+
+.dashboard-page .shablon__item,
+.dashboard-page .shablon__item1,
+.dashboard-page .shablon__item2,
+.dashboard-page .big__span,
+.dashboard-page .animation__item,
+.dashboard-page .slayd__card,
+.dashboard-page .compare-footer__table-wrap {
+    max-width: 100%;
+}
+
+.dashboard-page .share-guide__image-box,
+.dashboard-page .hamkor__img,
+.dashboard-page .design__img,
+.dashboard-page .hero__img,
+.dashboard-page .hero2__img {
+    box-shadow: 0 20px 42px rgba(56, 72, 109, 0.14);
+}
+
+@media (max-width: 1100px) {
+    .dashboard-page .section__item {
+        height: 180px;
+    }
+
+    .dashboard-page .shablon__list,
+    .dashboard-page .design__list,
+    .dashboard-page .matn__list {
+        gap: 24px;
+    }
+
+    .dashboard-page .matn__list {
+        align-items: stretch;
+    }
+
+    .dashboard-page .matn__block {
+        padding: 22px;
+    }
+
+    .dashboard-page .rasm__main-title1 {
+        margin-right: 0;
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 48px;
+    }
+
+    .dashboard-page .share-guide__gallery {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .dashboard-page .section__item1,
+    .dashboard-page .hamkor__item,
+    .dashboard-page .slayd__card {
+        gap: 18px;
+    }
+
+    .dashboard-page .matn__list,
+    .dashboard-page .design__list,
+    .dashboard-page .rasm__content {
+        flex-direction: column;
+    }
+
+    .dashboard-page .matn__block,
+    .dashboard-page .big__span,
+    .dashboard-page .rasm__card1,
+    .dashboard-page .rasm__card2 {
+        max-width: 100%;
+    }
+
+    .dashboard-page .rasm__card1,
+    .dashboard-page .rasm__card2,
+    .dashboard-page .rasm__title1,
+    .dashboard-page .rasm__text1 {
+        text-align: center;
+    }
+
+    .dashboard-page .compare-footer__title,
+    .dashboard-page .share-guide__title,
+    .dashboard-page .rasm__main-title1 {
+        text-wrap: balance;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-page .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .dashboard-page .section,
+    .dashboard-page .shablon,
+    .dashboard-page .design,
+    .dashboard-page .matn,
+    .dashboard-page .animation,
+    .dashboard-page .slayd,
+    .dashboard-page .hamkor,
+    .dashboard-page .taqdimot,
+    .dashboard-page .rasm,
+    .dashboard-page .share-guide,
+    .dashboard-page .compare-footer {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .dashboard-page .section__item {
+        height: auto;
+        min-height: 150px;
+        padding: 18px 14px;
+        border-bottom-left-radius: 34px;
+        border-bottom-right-radius: 34px;
+    }
+
+    .dashboard-page .section__item::before {
+        border-bottom-left-radius: 34px;
+        border-bottom-right-radius: 34px;
+    }
+
+    .dashboard-page .section__div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dashboard-page .section__btn {
+        width: min(100%, 260px);
+    }
+
+    .dashboard-page .section__title,
+    .dashboard-page .matn__title,
+    .dashboard-page .animation__title,
+    .dashboard-page .slayd__title,
+    .dashboard-page .taqdimot__title,
+    .dashboard-page .hamkor__title,
+    .dashboard-page .share-guide__title,
+    .dashboard-page .compare-footer__title,
+    .dashboard-page .rasm__main-title1 {
+        font-size: 32px;
+        line-height: 1.15;
+        margin-bottom: 24px;
+    }
+
+    .dashboard-page .shablon__title1,
+    .dashboard-page .design__text12 {
+        font-size: 32px;
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
+
+    .dashboard-page .section__item1,
+    .dashboard-page .hamkor__item,
+    .dashboard-page .slayd__card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-page .section__icon,
+    .dashboard-page .hamkor__icon {
+        min-width: 72px;
+        width: 72px;
+        height: 92px;
+        padding-top: 20px;
+    }
+
+    .dashboard-page .hamkor__item-title,
+    .dashboard-page .section__content h3,
+    .dashboard-page .design__title1,
+    .dashboard-page .matn__title1,
+    .dashboard-page .slayd__item-title,
+    .dashboard-page .animation__title1 {
+        font-size: 18px;
+    }
+
+    .dashboard-page .section__content p,
+    .dashboard-page .section__text,
+    .dashboard-page .shablon__text,
+    .dashboard-page .shablon__text1,
+    .dashboard-page .design__text,
+    .dashboard-page .matn__text,
+    .dashboard-page .animation__lead,
+    .dashboard-page .animation__text,
+    .dashboard-page .animation__step,
+    .dashboard-page .animation__note,
+    .dashboard-page .slayd__text,
+    .dashboard-page .slayd__note,
+    .dashboard-page .hamkor__text,
+    .dashboard-page .hamkor__note,
+    .dashboard-page .taqdimot__row-text,
+    .dashboard-page .taqdimot__note,
+    .dashboard-page .rasm__text1,
+    .dashboard-page .share-guide__lead,
+    .dashboard-page .share-guide__text,
+    .dashboard-page .compare-footer__text {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .dashboard-page .matn__title {
+        margin-top: 0;
+        margin-bottom: 32px;
+    }
+
+    .dashboard-page .matn__block,
+    .dashboard-page .animation__item,
+    .dashboard-page .animation__note {
+        padding: 18px;
+    }
+
+    .dashboard-page .slayd__btn1,
+    .dashboard-page .slayd__btn2,
+    .dashboard-page .slayd__btn3,
+    .dashboard-page .slayd__btn4 {
+        width: 64px;
+        height: 64px;
+        border-radius: 20px;
+    }
+
+    .dashboard-page .hamkor__content,
+    .dashboard-page .compare-footer__container,
+    .dashboard-page .share-guide__container,
+    .dashboard-page .taqdimot__container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .dashboard-page .compare-footer__table {
+        min-width: 640px;
+    }
+
+    .dashboard-page .compare-footer__table th,
+    .dashboard-page .compare-footer__table td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .dashboard-page .share-guide__image-box {
+        height: 220px;
+    }
+
+    .dashboard-page .rasm__diagram {
+        width: 320px;
+        height: 320px;
+    }
+
+    .dashboard-page .rasm__diagram::before {
+        inset: 96px;
+    }
+
+    .dashboard-page .rasm__icon--top {
+        top: 62px;
+    }
+
+    .dashboard-page .rasm__icon--right {
+        right: 58px;
+    }
+
+    .dashboard-page .rasm__icon--bottom {
+        bottom: 58px;
+    }
+
+    .dashboard-page .rasm__icon--left {
+        left: 58px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-page .container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .dashboard-page .section,
+    .dashboard-page .shablon,
+    .dashboard-page .design,
+    .dashboard-page .matn,
+    .dashboard-page .animation,
+    .dashboard-page .slayd,
+    .dashboard-page .hamkor,
+    .dashboard-page .taqdimot,
+    .dashboard-page .rasm,
+    .dashboard-page .share-guide,
+    .dashboard-page .compare-footer {
+        padding-top: 44px;
+        padding-bottom: 44px;
+    }
+
+    .dashboard-page .hero__title,
+    .dashboard-page .hero2__title,
+    .dashboard-page .section__title,
+    .dashboard-page .matn__title,
+    .dashboard-page .animation__title,
+    .dashboard-page .slayd__title,
+    .dashboard-page .taqdimot__title,
+    .dashboard-page .hamkor__title,
+    .dashboard-page .share-guide__title,
+    .dashboard-page .compare-footer__title,
+    .dashboard-page .rasm__main-title1,
+    .dashboard-page .shablon__title1,
+    .dashboard-page .design__text12 {
+        font-size: 26px;
+    }
+
+    .dashboard-page .hero__text,
+    .dashboard-page .hero2__content p,
+    .dashboard-page .section__content p,
+    .dashboard-page .section__text,
+    .dashboard-page .shablon__text,
+    .dashboard-page .shablon__text1,
+    .dashboard-page .design__text,
+    .dashboard-page .matn__text,
+    .dashboard-page .animation__lead,
+    .dashboard-page .animation__text,
+    .dashboard-page .animation__step,
+    .dashboard-page .animation__note,
+    .dashboard-page .slayd__text,
+    .dashboard-page .slayd__note,
+    .dashboard-page .hamkor__text,
+    .dashboard-page .hamkor__note,
+    .dashboard-page .taqdimot__row-text,
+    .dashboard-page .taqdimot__note,
+    .dashboard-page .rasm__text1,
+    .dashboard-page .share-guide__lead,
+    .dashboard-page .share-guide__text,
+    .dashboard-page .compare-footer__text {
+        font-size: 14px;
+    }
+
+    .dashboard-page .hamkor__item {
+        text-align: center;
+    }
+
+    .dashboard-page .hero__img,
+    .dashboard-page .hero2__img,
+    .dashboard-page .design__img,
+    .dashboard-page .hamkor__img,
+    .dashboard-page .share-guide__image-box {
+        border-radius: 18px;
+    }
+
+    .dashboard-page .section__item {
+        min-height: 132px;
+        padding: 16px 12px;
+    }
+
+    .dashboard-page .section__btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+
+    .dashboard-page .section__btn1 {
+        font-size: 12px;
+        padding: 4px 9px;
+    }
+
+    .dashboard-page .section__icon,
+    .dashboard-page .hamkor__icon {
+        width: 60px;
+        min-width: 60px;
+        height: 76px;
+    }
+
+    .dashboard-page .matn__block {
+        padding: 16px;
+        margin-bottom: 18px;
+        border-radius: 12px;
+    }
+
+    .dashboard-page .animation__item,
+    .dashboard-page .animation__note {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .dashboard-page .slayd__card {
+        padding: 14px;
+        gap: 12px;
+        border-radius: 22px;
+    }
+
+    .dashboard-page .slayd__btn1,
+    .dashboard-page .slayd__btn2,
+    .dashboard-page .slayd__btn3,
+    .dashboard-page .slayd__btn4 {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+    }
+
+    .dashboard-page .taqdimot__level--top {
+        max-width: 112px;
+        height: 90px;
+    }
+
+    .dashboard-page .taqdimot__level--middle {
+        max-width: 180px;
+        height: 92px;
+    }
+
+    .dashboard-page .taqdimot__level--bottom {
+        max-width: 258px;
+        height: 96px;
+    }
+
+    .dashboard-page .rasm__diagram {
+        width: 260px;
+        height: 260px;
+    }
+
+    .dashboard-page .rasm__diagram::before {
+        inset: 78px;
+    }
+
+    .dashboard-page .rasm__icon {
+        font-size: 22px;
+    }
+
+    .dashboard-page .rasm__icon--top {
+        top: 46px;
+    }
+
+    .dashboard-page .rasm__icon--right {
+        right: 46px;
+    }
+
+    .dashboard-page .rasm__icon--bottom {
+        bottom: 46px;
+    }
+
+    .dashboard-page .rasm__icon--left {
+        left: 46px;
+    }
+
+    .dashboard-page .share-guide__image-box {
+        height: 190px;
+    }
+
+    .dashboard-page .compare-footer__table {
+        min-width: 560px;
+    }
+}
+
+@media (max-width: 370px) {
+    .dashboard-page .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .dashboard-page .hero__title,
+    .dashboard-page .hero2__title,
+    .dashboard-page .section__title,
+    .dashboard-page .matn__title,
+    .dashboard-page .animation__title,
+    .dashboard-page .slayd__title,
+    .dashboard-page .taqdimot__title,
+    .dashboard-page .hamkor__title,
+    .dashboard-page .share-guide__title,
+    .dashboard-page .compare-footer__title,
+    .dashboard-page .rasm__main-title1,
+    .dashboard-page .shablon__title1,
+    .dashboard-page .design__text12 {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    .dashboard-page .hero__text,
+    .dashboard-page .hero2__content p,
+    .dashboard-page .section__content p,
+    .dashboard-page .section__text,
+    .dashboard-page .shablon__text,
+    .dashboard-page .shablon__text1,
+    .dashboard-page .design__text,
+    .dashboard-page .matn__text,
+    .dashboard-page .animation__lead,
+    .dashboard-page .animation__text,
+    .dashboard-page .animation__step,
+    .dashboard-page .animation__note,
+    .dashboard-page .slayd__text,
+    .dashboard-page .slayd__note,
+    .dashboard-page .hamkor__text,
+    .dashboard-page .hamkor__note,
+    .dashboard-page .taqdimot__row-text,
+    .dashboard-page .taqdimot__note,
+    .dashboard-page .rasm__text1,
+    .dashboard-page .share-guide__lead,
+    .dashboard-page .share-guide__text,
+    .dashboard-page .compare-footer__text {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .dashboard-page .shablon__title,
+    .dashboard-page .design__title1,
+    .dashboard-page .matn__title1,
+    .dashboard-page .animation__title1,
+    .dashboard-page .slayd__item-title,
+    .dashboard-page .hamkor__item-title,
+    .dashboard-page .taqdimot__row-title,
+    .dashboard-page .rasm__title1 {
+        font-size: 16px;
+    }
+
+    .dashboard-page .hero__img,
+    .dashboard-page .hero2__img,
+    .dashboard-page .design__img {
+        max-width: 100%;
+    }
+
+    .dashboard-page .section__item {
+        min-height: 124px;
+        padding: 14px 10px;
+    }
+
+    .dashboard-page .section__div {
+        gap: 8px;
+    }
+
+    .dashboard-page .section__btn {
+        font-size: 13px;
+        padding: 9px 14px;
+    }
+
+    .dashboard-page .section__btn1 {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    .dashboard-page .section__icon,
+    .dashboard-page .hamkor__icon {
+        width: 54px;
+        min-width: 54px;
+        height: 68px;
+        padding-top: 14px;
+    }
+
+    .dashboard-page .small__span {
+        gap: 8px;
+    }
+
+    .dashboard-page .small__span svg,
+    .dashboard-page .section__icon svg,
+    .dashboard-page .hamkor__icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .dashboard-page .matn__block,
+    .dashboard-page .animation__item,
+    .dashboard-page .animation__note,
+    .dashboard-page .slayd__card {
+        padding: 14px;
+    }
+
+    .dashboard-page .slayd__btn1,
+    .dashboard-page .slayd__btn2,
+    .dashboard-page .slayd__btn3,
+    .dashboard-page .slayd__btn4 {
+        width: 46px;
+        height: 46px;
+    }
+
+    .dashboard-page .taqdimot__level--top {
+        max-width: 96px;
+        height: 78px;
+    }
+
+    .dashboard-page .taqdimot__level--middle {
+        max-width: 152px;
+        height: 80px;
+    }
+
+    .dashboard-page .taqdimot__level--bottom {
+        max-width: 220px;
+        height: 86px;
+    }
+
+    .dashboard-page .taqdimot__level svg {
+        width: 22px;
+        height: 22px;
+        top: 10px;
+    }
+
+    .dashboard-page .rasm__diagram {
+        width: 220px;
+        height: 220px;
+    }
+
+    .dashboard-page .rasm__diagram::before {
+        inset: 66px;
+    }
+
+    .dashboard-page .rasm__icon--top {
+        top: 38px;
+    }
+
+    .dashboard-page .rasm__icon--right {
+        right: 38px;
+    }
+
+    .dashboard-page .rasm__icon--bottom {
+        bottom: 38px;
+    }
+
+    .dashboard-page .rasm__icon--left {
+        left: 38px;
+    }
+
+    .dashboard-page .share-guide__image-box {
+        height: 170px;
+    }
+
+    .dashboard-page .compare-footer__table {
+        min-width: 520px;
+    }
+
+    .dashboard-page .compare-footer__table th,
+    .dashboard-page .compare-footer__table td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+}

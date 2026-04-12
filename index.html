@@ -1,644 +1,771 @@
 <!DOCTYPE html>
 <html lang="uz">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./css.css">
-    <link rel="stylesheet" href="./past.css">
-    <link rel="stylesheet" href="./hero.css">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300C4CC'/%3E%3Cstop offset='100%25' stop-color='%237B2CBF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23grad)'/%3E%3Ctext x='50' y='72' font-family='Arial, sans-serif' font-weight='bold' font-size='58' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTrack • Professional Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <title>Canva | Professional Taqdimot</title>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 10% 30%, #e0e7ff, #a5b4fc);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .login-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      width: 100%;
+      max-width: 420px;
+      padding: 2rem 1.5rem;
+      border-radius: 32px;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .logo i {
+      font-size: 1.8rem;
+      color: #2563eb;
+      transition: font-size 0.2s;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0f172a;
+      transition: font-size 0.2s;
+    }
+
+    .subhead {
+      color: #475569;
+      font-size: 0.85rem;
+      margin-bottom: 1.8rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 14px;
+    }
+
+    .input-group {
+      margin-bottom: 1.3rem;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-wrapper i {
+      position: absolute;
+      left: 14px;
+      color: #64748b;
+      font-size: 1rem;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      padding: 13px 14px 13px 42px;
+      font-size: 0.95rem;
+      background: white;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
+      outline: none;
+      transition: all 0.2s;
+      font-weight: 500;
+      color: #0f172a;
+    }
+
+    .input-wrapper input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .input-wrapper .toggle-password {
+      position: absolute;
+      right: 14px;
+      background: none;
+      border: none;
+      color: #64748b;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 4px;
+    }
+
+    .strength-bar {
+      margin-top: 8px;
+      height: 4px;
+      background: #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #strengthFill {
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s, background 0.3s;
+      border-radius: 10px;
+    }
+
+    .strength-text {
+      font-size: 0.7rem;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .options {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 18px 0 22px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #1e293b;
+      cursor: pointer;
+    }
+
+    .checkbox-label input {
+      width: 18px;
+      height: 18px;
+      accent-color: #2563eb;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      background: #1e293b;
+      color: white;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 8px 20px rgba(30, 41, 59, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .login-btn:hover {
+      background: #0f172a;
+      transform: translateY(-2px);
+    }
+
+    .login-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 10px rgba(30, 41, 59, 0.2);
+    }
+
+    #msg {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 600;
+      min-height: 45px;
+      padding: 10px 14px;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+      word-break: break-word;
+    }
+
+    .demo-hint {
+      margin-top: 20px;
+      padding: 12px;
+      background: #f1f5f9;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      color: #475569;
+    }
+
+    .demo-hint details {
+      cursor: pointer;
+    }
+
+    .demo-hint summary {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.8rem;
+    }
+
+    .demo-hint ul {
+      list-style: none;
+      padding-left: 4px;
+    }
+
+    .demo-hint li {
+      padding: 3px 0;
+      border-bottom: 1px dashed #cbd5e1;
+      font-size: 0.75rem;
+    }
+
+    /* ========== RESPONSIVE MEDIA QUERIES ========== */
+
+    /* Planshetlar va kichik ekranlar (max-width: 600px) */
+    @media (max-width: 600px) {
+      body {
+        padding: 0.75rem;
+        align-items: flex-start;
+        padding-top: 2rem;
+      }
+
+      .login-card {
+        max-width: 100%;
+        padding: 1.8rem 1.2rem;
+        border-radius: 24px;
+      }
+
+      .logo i {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .subhead {
+        font-size: 0.8rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .input-group {
+        margin-bottom: 1rem;
+      }
+
+      .input-group label {
+        font-size: 0.7rem;
+      }
+
+      .input-wrapper input {
+        padding: 12px 12px 12px 40px;
+        font-size: 0.9rem;
+        border-radius: 12px;
+      }
+
+      .input-wrapper i {
+        left: 12px;
+        font-size: 0.95rem;
+      }
+
+      .login-btn {
+        padding: 13px;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Mobil telefonlar (max-width: 480px) */
+    @media (max-width: 480px) {
+      body {
+        padding: 0.5rem;
+        padding-top: 1rem;
+      }
+
+      .login-card {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .logo {
+        gap: 8px;
+      }
+
+      .logo i {
+        font-size: 1.4rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      .subhead {
+        font-size: 0.75rem;
+        margin-bottom: 1.2rem;
+        padding-left: 10px;
+      }
+
+      .input-group label {
+        font-size: 0.65rem;
+        letter-spacing: 0.3px;
+      }
+
+      .input-wrapper input {
+        padding: 11px 11px 11px 38px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+      }
+
+      .input-wrapper i {
+        left: 11px;
+        font-size: 0.9rem;
+      }
+
+      .input-wrapper .toggle-password {
+        right: 11px;
+        font-size: 1rem;
+      }
+
+      .strength-bar {
+        height: 3px;
+      }
+
+      .strength-text {
+        font-size: 0.65rem;
+      }
+
+      .options {
+        margin: 15px 0 18px;
+      }
+
+      .checkbox-label {
+        font-size: 0.8rem;
+        gap: 6px;
+      }
+
+      .checkbox-label input {
+        width: 16px;
+        height: 16px;
+      }
+
+      .login-btn {
+        padding: 12px;
+        font-size: 0.9rem;
+        border-radius: 30px;
+      }
+
+      #msg {
+        margin-top: 16px;
+        min-height: 40px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+      }
+
+      .demo-hint {
+        margin-top: 16px;
+        padding: 10px;
+        font-size: 0.7rem;
+      }
+
+      .demo-hint summary {
+        font-size: 0.75rem;
+      }
+
+      .demo-hint li {
+        font-size: 0.7rem;
+        padding: 2px 0;
+      }
+    }
+
+    /* Juda kichik ekranlar (max-width: 360px) */
+    @media (max-width: 360px) {
+      body {
+        padding: 0.25rem;
+        padding-top: 0.5rem;
+      }
+
+      .login-card {
+        padding: 1.2rem 0.9rem;
+        border-radius: 16px;
+      }
+
+      .logo i {
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      .subhead {
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+      }
+
+      .input-group {
+        margin-bottom: 0.9rem;
+      }
+
+      .input-group label {
+        font-size: 0.6rem;
+        margin-bottom: 4px;
+      }
+
+      .input-wrapper input {
+        padding: 10px 10px 10px 35px;
+        font-size: 0.8rem;
+      }
+
+      .input-wrapper i {
+        left: 10px;
+        font-size: 0.85rem;
+      }
+
+      .input-wrapper .toggle-password {
+        right: 10px;
+        font-size: 0.9rem;
+      }
+
+      .login-btn {
+        padding: 11px;
+        font-size: 0.85rem;
+      }
+
+      #msg {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+      }
+
+      .demo-hint {
+        padding: 8px;
+        font-size: 0.65rem;
+      }
+
+      .demo-hint summary {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* Katta ekranlar uchun qo'shimcha (min-width: 1400px) */
+    @media (min-width: 1400px) {
+      .login-card {
+        max-width: 480px;
+        padding: 3rem 2.5rem;
+        border-radius: 40px;
+      }
+
+      .logo i {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .subhead {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .input-wrapper input {
+        padding: 16px 18px 16px 50px;
+        font-size: 1.1rem;
+        border-radius: 18px;
+      }
+
+      .input-wrapper i {
+        left: 18px;
+        font-size: 1.2rem;
+      }
+
+      .login-btn {
+        padding: 18px;
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Landscape orientatsiya uchun (mobil gorizontal holat) */
+    @media (max-height: 500px) and (orientation: landscape) {
+      body {
+        align-items: flex-start;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .login-card {
+        padding: 1.2rem 1.5rem;
+      }
+
+      .subhead {
+        margin-bottom: 1rem;
+      }
+
+      .input-group {
+        margin-bottom: 0.8rem;
+      }
+
+      .demo-hint {
+        margin-top: 12px;
+      }
+    }
+
+  </style>
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <div class="header__container">
-                <ul class="header__list">
-                    <li class="header__item">
-                        <a href="#" class="header__link">Home</a>
-                        <a href="#" class="header__link">Templates</a>
-                        <a href="#" class="header__link">Pricing</a>
-                        <a href="#" class="header__link">Tutorials</a>
-                    </li>
-                </ul>
 
-                <img class="header__img" src="./images/images2.png" alt="Gerb_rasmi">
+<div class="login-card">
+  <div class="logo">
+    <i class="fas fa-graduation-cap"></i>
+    <h2>EduTrack</h2>
+  </div>
+  <div class="subhead">Professional kirish tizimi • v2.0</div>
 
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#">Home</a>
-        <a href="#">Templates</a>
-        <a href="#">Pricing</a>
-        <a href="#">Tutorials</a>
+  <!-- Login input -->
+  <div class="input-group">
+    <label>Foydalanuvchi nomi</label>
+    <div class="input-wrapper">
+      <i class="fas fa-user"></i>
+      <input type="text" id="user" placeholder="masalan: admin" autocomplete="username">
     </div>
-    <div class="overlay" id="overlay"></div>
-    <div class="hero">
-        <div class="container">
-            <div class="hero__container">
-                <ul class="hero__list">
-                    <li class="hero__item">
-                        <img data-aos="fade-right" class="hero__img" src="./images/images1.png" alt="rasm1">
-                    </li>
-                    <li class="hero__item1">
-                        <h1 class="hero__title">Canva yordamida professional taqdimotlar yaratish</h1>
-                        <p class="hero__text">Zamonaviy raqamli dunyoda professional taqdimotlar yaratish har
-                            qanday mutaxassis uchun muhim ko'nikma hisoblanadi. Canva
-                            platformasi murakkab dasturiy ta'minotlarsiz ham yuqori sifatli, vizual
-                            jihatdan boy taqdimotlarni tayyorlash imkonini beradi.
-                        </p>
-                        <p class="hero__text">Ushbu yo'riqnoma sizga Canva yordamida taqdimot yaratishning
-                            asosiy bosqichlarini bosqichma-bosqich o'rgatadi. Oddiy, ammo
-                            samarali usullar yordamida tez va professional ko'rinishdagi
-                            taqdimotlar tayyorlashni o'rganasiz.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  </div>
+
+  <!-- Parol input -->
+  <div class="input-group">
+    <label>Parol</label>
+    <div class="input-wrapper">
+      <i class="fas fa-lock"></i>
+      <input type="password" id="pass" placeholder="••••••••" autocomplete="current-password" onkeyup="updateStrength()">
+      <button class="toggle-password" type="button" onclick="togglePassword()">
+        <i class="far fa-eye" id="toggleIcon"></i>
+      </button>
     </div>
-    <div class="hero2">
-        <div class="container">
-            <div class="hero2__container">
-
-                <div class="hero2__left">
-                    <h1 class="hero2__title">Canva bilan tanishuv</h1>
-
-                    <ul class="hero2__list">
-
-                        <li class="hero2__item">
-                            <div class="hero2__content">
-                                <div class="hero2__number">1</div>
-                                <h3>Canva nima?</h3>
-                                <p>
-                                    Canva - bu grafik dizayn uchun mo'ljallangan
-                                    foydalanuvchi uchun qulay onlayn platforma bo'lib,
-                                    professional ko'rinishdagi taqdimotlar, ijtimoiy tarmoq
-                                    postlari, va boshqa vizual materiallarni yaratish imkonini
-                                    beradi.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li class="hero2__item">
-                            <div class="hero2__content">
-                                <div class="hero2__number">2</div>
-                                <h3>Canva afzalliklari</h3>
-                                <p>
-                                    Sodda interfeys, boy shablon to'plami, ko'plab bepul
-                                    elementlar va real vaqtda hamkorlik qilish imkoniyati
-                                    Canvani PowerPoint kabi an'anaviy dasturlardan ajratib
-                                    turadi.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li class="hero2__item">
-                            <div class="hero2__content">
-                                <div class="hero2__number">3</div>
-                                <h3>Boshlash uchun</h3>
-                                <p>
-                                    Canvadan foydalanish uchun canva.com saytiga kirib,
-                                    bepul ro'yxatdan o'tish kifoya. Asosiy funksiyalar bepul
-                                    hisobida ham mavjud, yanada ko'proq imkoniyatlar uchun
-                                    Canva Pro tarifini tanlashingiz mumkin.
-                                </p>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div class="hero2__right">
-                    <img data-aos="fade-right" class="hero2__img" src="./images/images3.png" alt="Canva preview">
-                </div>
-
-            </div>
-        </div>
+    <div class="strength-bar">
+      <div id="strengthFill"></div>
     </div>
+    <div class="strength-text" id="strengthLabel"></div>
+  </div>
 
-    <div class="section">
-        <div class="container">
-            <div class="section__container">
-                <div class="section__item">
-                    <button class="section__btn">Create a design</button>
-                    <div class="section__div">
-                        <button class="section__btn1">≣</button>
-                        <button class="section__btn1">Presentation</button>
-                        <button class="section__btn1">○</button>
-                    </div>
-                </div>
-                <h1 class="section__title">Yangi taqdimot yaratish</h1>
+  <div class="options">
+    <label class="checkbox-label">
+      <input type="checkbox" id="remember"> <span>Eslab qolish</span>
+    </label>
+  </div>
 
-                <div class="section__item1">
-                    <div class="section__icon">
-                        <img class="section__img" src="./images/images5.png" alt="">
-                    </div>
-                    <div class="section__content">
-                        <h3>Canva.com saytiga kiring</h3>
-                        <p>
-                            Brauzeringizda canva.com saytini oching va o'z hisobingizga kiring. Agar hisobingiz
-                            bo'lmasa, bepul ro'yxatdan o'ting.
-                        </p>
-                    </div>
-                </div>
+  <button class="login-btn" onclick="handleLogin()">
+    <i class="fas fa-arrow-right-to-bracket"></i> Tizimga kirish
+  </button>
 
-                <div class="section__item1">
-                    <div class="section__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
-                    </div>
-                    <div class="section__content">
-                        <h3>"Create a design" tugmasini bosing</h3>
-                        <p>
-                            Bosh sahifada yoki yuqori o'ng burchakda joylashgan "Create a design" tugmasini bosing. Bu
-                            sizga barcha mavjud dizayn turlarini ko'rsatadi.
-                        </p>
-                    </div>
-                </div>
+  <div id="msg">
+    <i class="fas fa-shield-alt"></i>  Login va parolni kiriting
+</div>
 
-                <div class="section__item1">
-                    <div class="section__icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="12" rx="1"></rect>
-                            <line x1="8" y1="20" x2="16" y2="20"></line>
-                            <line x1="12" y1="16" x2="12" y2="20"></line>
-                        </svg>
-                    </div>
-                    <div class="section__content">
-                        <h3>"Presentation" formatini tanlang</h3>
-                        <p>
-                            Taklif etilgan formatlar ro'yxatidan "Presentation" variantini toping va bosing. Siz darhol
-                            bo'sh taqdimot ish maydoniga yo'naltirilasiz.
-                        </p>
-                    </div>
-                </div>
 
-                <p class="section__text">
-                    Bu bosqich natijasida, sizning ish maydoingiz taqdimot formatida ochiladi va
-                    siz dizayn jarayonini boshlashingiz mumkin.
-                    Canva interfeysi foydalanuvchi uchun qulay bo'lib, barcha kerakli asboblar chap panelda joylashgan.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="shablon">
-        <div class="container">
-            <div class="shablon__container">
-                <h1 class="shablon__title1">Shablonni tanlash</h1>
-                <ul class="shablon__list">
-                    <li class="shablon__item">
-                        <hr class="shablon__hr">
-                        <h1 class="shablon__title">Templates bo'limiga o'ting</h1>
-                        <p class="shablon__text">
-                            Ish maydoni ochilgandan so'ng,
-                            chap panelda joylashgan
-                            "Templates" bo'limiga kiring. Bu
-                            yerda turli mavzular, uslublar va
-                            ranglar bo'yicha tasniflangan
-                            ko'plab shablonlar mavjud.
-                        </p>
-                    </li>
-                    <li class="shablon__item2">
-                        <hr class="shablon__hr">
-                        <h1 class="shablon__title">Mavzuga mos shablonlarni <br> qidiring</h1>
-                        <p class="shablon__text">
-                            Qidiruv maydoniga o'z
-                            mavzungizga mos kalit so'zlarni
-                            kiriting: "education", "business",
-                            "project", "creative" va hokazo. Bu
-                            sizning mavzungizga mos
-                            shablonlarni topishga yordam
-                            beradi.
-                        </p>
-                    </li>
-                    <li class="shablon__item1">
-                        <hr class="shablon__hr">
-                        <h1 class="shablon__title">Yoqqan shablonni <br> tanlang</h1>
-                        <p class="shablon__text">
-                            Ko'rib chiqish uchun shablonlarni
-                            bosing. Yoqqan shablonni
-                            topganingizda, uni tanlang.
-                            Shablon avtomatik ravishda sizning
-                            ish maydoningizga qo'llaniladi va
-                            siz uni moslashtira boshlashingiz
-                            mumkin.
-                        </p>
-                    </li>
-                </ul>
-                <p class="shablon__text1">Yaxshi shablon tanlash professional taqdimot yaratishning dastlabki va muhim
-                    qadami hisoblanadi. Shablonlar sizning
-                    vaqtingizni tejaydi va dizayn jarayonini soddalashtiradi, ammo esda tutingki, har qanday shablonni
-                    o'z ehtiyojlaringizga
-                    qarab to'liq o'zgartirishingiz mumkin.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="design">
-        <div class="container">
-            <div class="design__container">
-                <h1 class="design__text12">Shablonni moslashtirish</h1>
-                <ul class="design__list">
-                    <li class="design__item">
-                        <div class="big__span">
-                            <div class="small__span">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <div class="demo-hint">
+    <details>
+      <summary><i class="fas fa-key"></i> Demo loginlar (bosish)</summary>
+      <ul>
+        <li><b>admin</b> / Admin2026</li>
+        <li><b>teacher</b> / Teach2026</li>
+        <li><b>student</b> / Stud2026</li>
+        <li><b>dekan</b> / Dekan2026</li>
+        <li><b>ofis</b> / Ofis2026</li>
+        <li><b>itadmin</b> / IT2026</li>
+        <li><b>magistr</b> / Mag2026</li>
+        <li><b>tyutor</b> / Tutor2026</li>
+        <li><b>parent</b> / Parent2026</li>
+      </ul>
+    </details>
+  </div>
+</div>
 
-                                    <path d="M12 3C6.5 3 2 6.8 2 11.5C2 15.1 4.7 18 8 18H9.5
-           C10.9 18 12 19.1 12 20.5C12 21.3 12.7 22 13.5 22
-           C18.7 22 22 17.7 22 12.5C22 7.3 17.5 3 12 3Z" />
+<script>
+  (function(){
+    // ---------- Foydalanuvchilar bazasi ----------
+    const users = [
+      { u: "admin",    p: "Admin2026",  role: "Admin" },
+      { u: "teacher",  p: "Teach2026",  role: "O'qituvchi" },
+      { u: "student",  p: "Stud2026",   role: "Talaba" },
+      { u: "dekan",    p: "Dekan2026",  role: "Dekan" },
+      { u: "ofis",     p: "Ofis2026",   role: "O'quv bo'limi" },
+      { u: "itadmin",  p: "IT2026",     role: "IT Admin" },
+      { u: "magistr",  p: "Mag2026",    role: "Magistr" },
+      { u: "tyutor",   p: "Tutor2026",  role: "Tyutor" },
+      { u: "parent",   p: "Parent2026", role: "Ota-ona" }
+    ];
 
-                                    <circle cx="7.5" cy="10" r="0.5" />
-                                    <circle cx="11" cy="7.5" r="0.6" />
-                                    <circle cx="15" cy="9" r="0.7" />
-                                    <circle cx="16" cy="13" r="0.8" />
+    const userInput = document.getElementById('user');
+    const passInput = document.getElementById('pass');
+    const rememberCheck = document.getElementById('remember');
+    const msgDiv = document.getElementById('msg');
+    const strengthFill = document.getElementById('strengthFill');
+    const strengthLabel = document.getElementById('strengthLabel');
+    const toggleIcon = document.getElementById('toggleIcon');
 
-                                </svg>
-                                <h1 class="design__title1">Ranglarni o'zgartirish</h1>
-                            </div>
-                            <p class="design__text">
-                                Chap paneldagi "Style" bo'limini tanlang va "Brand" ichidan
-                                ranglar palitrasini o'zgartiring. Taqdimotingizga mos ranglarni
-                                tanlash orqali uning umumiy ko'rinishini o'zgartirishingiz
-                                mumkin.
-                            </p>
-                        </div>
-                        <div class="big__span">
-                            <div class="small__span">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 20L10 4L16 20" />
-                                    <line x1="6" y1="14" x2="14" y2="14" />
-                                </svg>
-                                <h1 class="design__title1">Shriftlarni tanlash</h1>
-                            </div>
-                            <p class="design__text">
-                                "Style" bo'limida "Fonts" qismini tanlang. Sarlavha va matn
-                                uchun mos shriftlarni tanlang. Canva tavsiya etilgan shrift
-                                kombinatsiyalarini ham taklif qiladi.
-                            </p>
-                        </div>
-                        <div class="big__span">
-                            <div class="small__span">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="5" width="18" height="14" rx="2" />
-                                    <circle cx="8" cy="10" r="2" />
-                                    <path d="M21 15l-5-5L5 19" />
-                                </svg>
-                                <h1 class="design__title1">Fon tasvirini almashtirish</h1>
-                            </div>
-                            <p class="design__text">
-                                Fonni o'zgartirish uchun slaydni tanlang, keyin "Background"
-                                bo'limiga o'ting. Rangli fon yoki tasvirni tanlang. Canva
-                                kutubxonasidan foydalaning yoki o'z tasviringizni yuklang.
-                            </p>
-                        </div>
-                        <div class="big__span">
-                            <div class="small__span">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                                    <line x1="3" y1="9" x2="21" y2="9" />
-                                    <line x1="9" y1="21" x2="9" y2="9" />
-                                </svg>
-                                <h1 class="design__title1">Slayd tartibini moslashtirish</h1>
-                            </div>
-                            <p class="design__text">
-                                Har bir slayd elementlarini sichqoncha bilan sudrab
-                                joylashtiring. Tanlangan elementni sozlash uchun "Position"
-                                panelidan foydalaning yoki yo'naltiruvchi chiziqlardan
-                                foydalaning.
-                            </p>
-                            </span>
-                    </li>
-                    <li class="design__item">
-                        <img data-aos="fade-right" class="design__img" src="./images/images6.png" alt="Canva preview">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="matn">
-        <div class="container">
-            <div class="matn__container">
-                <h1 class="matn__title">Matn bilan ishlash</h1>
-                <ul class="matn__list">
-                    <li class="matn__item">
-                        <div class="matn__block">
-                            <h1 class="matn__title1">Matn qo'shish</h1>
-                            <p class="matn__text">Chap paneldagi "Text" bo'limini tanlang. "Add a heading", "Add a
-                                subheading" yoki "Add a little bit of body text" variantlaridan birini
-                                tanlang. Yoki tayyor matn bloklaridan foydalaning.
-                            </p>
-                        </div>
-                        <div class="matn__block">
-                            <h1 class="matn__title1">Matnni tahrirlash</h1>
-                            <p class="matn__text">Qo'shilgan matn ustiga ikki marta bosib, uni tahrirlashni boshlang.
-                                Matn bloklarini qayta o'lchashlash, joylashtirish va
-                                formatlashtirish mumkin.
-                            </p>
-                        </div>
-                        <div class="matn__block">
-                            <h1 class="matn__title1">Matnni formatlash</h1>
-                            <p class="matn__text">Matnni tanlagandan so'ng, yuqori panelda paydo bo'ladigan
-                                sozlamalar orqali shrift, o'lcham, rang, tekislash va boshqa
-                                xususiyatlarni o'zgartiring.
-                            </p>
-                        </div>
-                        <div class="matn__block">
-                            <h1 class="matn__title1">Matn effektlari</h1>
-                            <p class="matn__text">Matnni ajratib ko'rsatish uchun "Effects" bo'limidan foydalaning.
-                                Soya, yorug'lik va boshqa vizual effektlarni qo'shishingiz mumkin.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="matn__item1">
-                        <img class="design__img" src="./images/images7.png" alt="Canva preview">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="rasm">
-        <div class="container">
-            <div class="rasm__container">
-                <h1 class="rasm__main-title">Rasmlar bilan ishlash</h1>
+    let urinishSoni = 0;
+    let bloklangan = false;
+    let blokTimer = null;
+    let qolganVaqt = 0;
 
-                <div class="rasm__content">
-                    <div class="rasm__column1">
-                        <div class="rasm__card2">
-                            <h2 class="rasm__title1">Rasmlarni yuklash</h2>
-                            <p class="rasm__text1">
-                                Chap paneldagi "Uploads" bo'limini tanlang va "Upload media" tugmasini bosing.
-                                Kompyuteringizdan rasmni tanlang va yuklang.
-                            </p>
-                        </div>
+    // Avval login qilinganmi tekshirish
+    const authUser = sessionStorage.getItem('eduTrackAuth');
+    if (authUser) {
+      window.location.href = 'dashboart.html';
+    }
 
-                        <div class="rasm__card2">
-                            <h2 class="rasm__title1">Rasmlarni joylashtirish</h2>
-                            <p class="rasm__text1">
-                                Rasmlarni kesish, o'lchamini o'zgartirish va slaydga moslashtirish uchun "Crop"
-                                yoki "Resize" funksiyalaridan foydalaning.
-                            </p>
-                        </div>
-                    </div>
+    function xabarChiqarish(text, type = 'info') {
+      msgDiv.innerHTML = text;
+      if (type === 'success') {
+        msgDiv.style.color = '#0b5e42';
+        msgDiv.style.background = '#d1fae5';
+      } else if (type === 'error') {
+        msgDiv.style.color = '#b91c1c';
+        msgDiv.style.background = '#fee2e2';
+      } else {
+        msgDiv.style.color = '#1e293b';
+        msgDiv.style.background = 'rgba(255,255,255,0.5)';
+      }
+    }
 
-                    <div class="rasm__center">
-                        <div class="rasm__diagram">
-                            <div class="rasm__icon rasm__icon--top"><i class="fas fa-upload"></i></div>
-                            <div class="rasm__icon rasm__icon--right"><i class="fas fa-search"></i></div>
-                            <div class="rasm__icon rasm__icon--bottom"><i class="fas fa-i-cursor"></i></div>
-                            <div class="rasm__icon rasm__icon--left"><i class="fas fa-crop-alt"></i></div>
-                        </div>
-                    </div>
+    window.updateStrength = function() {
+      const p = passInput.value;
+      let ball = 0;
+      if (p.length >= 8) ball++;
+      if (/[A-Z]/.test(p)) ball++;
+      if (/[0-9]/.test(p)) ball++;
+      if (/[!@#$%^&*]/.test(p)) ball++;
 
-                    <div class="rasm__column1">
-                        <div class="rasm__card1">
-                            <h2 class="rasm__title1">Canva kutubxonasidan foydalanish</h2>
-                            <p class="rasm__text1">
-                                "Photos" bo'limidan foydalanib, Canva taklif etadigan milliondan ortiq bepul va
-                                pullik tasvirlarni qidirishingiz mumkin.
-                            </p>
-                        </div>
+      let foiz = 0, label = '', color = '#e2e8f0';
+      if (p.length === 0) {
+        foiz = 0; label = 'Parolni kiriting'; color = '#cbd5e1';
+      } else if (ball <= 1) {
+        foiz = 30; label = 'Kuchsiz parol'; color = '#ef4444';
+      } else if (ball === 2) {
+        foiz = 60; label = 'O\'rtacha parol'; color = '#f59e0b';
+      } else {
+        foiz = 100; label = 'Kuchli parol ✓'; color = '#10b981';
+      }
+      strengthFill.style.width = foiz + '%';
+      strengthFill.style.background = color;
+      strengthLabel.textContent = label;
+      strengthLabel.style.color = color;
+    };
 
-                        <div class="rasm__card1">
-                            <h2 class="rasm__title1">Rasmlarni tahrirlash</h2>
-                            <p class="rasm__text1">
-                                Rasmni tanlab, "Edit image" orqali filtrlar, yorqinlik, kontrast va boshqa
-                                parametrlarni o'zgartiring.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="main">
-        <div class="container">
-            <div class="main__container">
-                <div class="main__image">
-                    <img class="main__img" src="./images/images8.png" alt="Siz qo'yadigan rasm">
-                </div>
+    window.togglePassword = function() {
+      const type = passInput.type === 'password' ? 'text' : 'password';
+      passInput.type = type;
+      toggleIcon.className = type === 'password' ? 'far fa-eye' : 'far fa-eye-slash';
+    };
 
-                <div class="main__content">
-                    <h1 class="main__title">Elementlar qo'shish</h1>
+    function bloklashniBoshlash() {
+      if (bloklangan) return;
+      bloklangan = true;
+      qolganVaqt = 10;
+      if (blokTimer) clearInterval(blokTimer);
+      
+      blokTimer = setInterval(() => {
+        if (qolganVaqt <= 0) {
+          clearInterval(blokTimer);
+          blokTimer = null;
+          bloklangan = false;
+          urinishSoni = 0;
+          xabarChiqarish('<i class="fas fa-unlock-alt"></i> Blok ochildi. Qayta urinib ko\'ring.', 'info');
+        } else {
+          xabarChiqarish(`<i class="fas fa-hourglass-half"></i> Bloklangan! ${qolganVaqt} soniya kuting.`, 'error');
+          qolganVaqt--;
+        }
+      }, 1000);
+    }
 
-                    <div class="main__grid">
-                        <div class="main__card">
-                            <div class="main__icon">
-                                <i class="fas fa-shapes icon_i"></i>
-                            </div>
-                            <h3 class="main__card-title">Shakllar</h3>
-                            <p class="main__text">
-                                "Elements" bo'limidagi "Shapes" kategoriyasidan doira, to'rtburchak, strelkalar va
-                                boshqa geometrik shakllarni qo'shishingiz mumkin. Ularning rangini, o'lchamini va
-                                shaffofligini oson o'zgartirish mumkin.
-                            </p>
-                        </div>
+    window.handleLogin = function() {
+      if (bloklangan) {
+        xabarChiqarish(`⛔ Bloklangan. ${qolganVaqt} soniya kuting.`, 'error');
+        return;
+      }
 
-                        <div class="main__card">
-                            <div class="main__icon">
-                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="10" width="3" height="13" rx="1"></rect>
-                                    <rect x="10.5" y="4" width="3" height="19" rx="1"></rect>
-                                    <rect x="18" y="7" width="3" height="16" rx="1"></rect>
-                                </svg>
-                            </div>
-                            <h3 class="main__card-title">Diagrammalar</h3>
-                            <p class="main__text">
-                                "Charts" bo'limidan taqdimotingizga mos keladigan diagramma turini tanlang: ustunli,
-                                doiraviy, chiziqli va boshqalar. Diagrammalarni o'z ma'lumotlaringizga qarab
-                                moslashtirishingiz mumkin.
-                            </p>
-                        </div>
+      const username = userInput.value.trim();
+      const parol = passInput.value;
 
-                        <div class="main__card">
-                            <div class="main__icon">
-                                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M8 6a3 3 0 0 1 6 0c0 2-3 3-3 5"></path>
-                                    <path d="M16 10l4-2"></path>
-                                    <path d="M16 14l4 2"></path>
-                                    <path d="M7 17h10"></path>
-                                    <path d="M4 12h3"></path>
-                                    <circle cx="12" cy="18" r="3"></circle>
-                                </svg>
-                            </div>
-                            <h3 class="main__card-title">Piktogrammalar</h3>
-                            <p class="main__text">
-                                "Icons" bo'limidan mavzuga mos piktogrammalarni qidirib va qo'shing. Piktogrammalar
-                                murakkab g'oyalarni sodda va tushunarli ko'rinishda ifodalashga yordam beradi.
-                            </p>
-                        </div>
+      if (!username || !parol) {
+        xabarChiqarish('<i class="fas fa-exclamation-triangle"></i> Login va parolni to\'ldiring!', 'error');
+        return;
+      }
 
-                        <div class="main__card">
-                            <div class="main__icon">
-                                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M30 1V5h-30"></path>
-                                    <path d="M0 19v0h30"></path>
-                                    <path d="M6 -14v50"></path>
-                                    <path d="M19 -14v50"></path>
-                                </svg>
-                            </div>
-                            <h3 class="main__card-title">Ramkalar</h3>
-                            <p class="main__text">
-                                "Frames" elementlari yordamida rasmlaringizni turli shakllarda joylashtirishingiz
-                                mumkin. Doira, yulduz, beshburchak va boshqa ko'rinishlar dizaynga jon bag'ishlaydi.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="animation">
-        <div class="container">
-            <div class="animation__container">
-                <h1 class="animation__title">Animatsiya va ta'sirlar qo'shish</h1>
-                <ul class="animation__list">
-                    <li class="animation__item">
-                        <h2 class="animation__title1">Element animatsiyalari</h2>
-                        <p class="animation__lead">Alohida elementlarga animatsiya qo'shish:</p>
-                        <ol class="animation__steps">
-                            <li class="animation__step">1. Animatsiya qo'shmoqchi bo'lgan elementni tanlang</li>
-                            <li class="animation__step">2. Yuqori paneldagi "Animate" tugmasini bosing</li>
-                            <li class="animation__step">3. Taklif etilgan animatsiya effektlaridan birini tanlang</li>
-                            <li class="animation__step">4. Animatsiya tezligini sozlang</li>
-                        </ol>
-                        <p class="animation__text">
-                            Har bir element uchun alohida animatsiya effektini tanlashingiz mumkin, bu
-                            taqdimotingizga dinamik ko'rinish beradi.
-                        </p>
-                    </li>
-                    <li class="animation__item animation__item--delay">
-                        <h2 class="animation__title1">Slayd o'tish effektlari</h2>
-                        <p class="animation__lead">Slaydlar o'rtasidagi o'tishlarni sozlash:</p>
-                        <ol class="animation__steps">
-                            <li class="animation__step">1. Slaydni tanlang</li>
-                            <li class="animation__step">2. Yuqori paneldagi "Animate" tugmasini bosing</li>
-                            <li class="animation__step">3. "Page animation" bo'limiga o'ting</li>
-                            <li class="animation__step">4. O'tish turini tanlang: siljish, aylantirish, so'nish va
-                                boshqalar</li>
-                        </ol>
-                        <p class="animation__text">
-                            Slayd o'tish effektlari taqdimotingizni yanada professional va interfaol qiladi,
-                            lekin ularni haddan tashqari ko'p ishlatmaslik muhim.
-                        </p>
-                    </li>
-                </ul>
-                <p class="animation__note">
-                    Animatsiyalarni qo'shishda e'tiborli bo'ling, ular taqdimotingizni jonlantirishi,
-                    lekin haddan tashqari ko'p animatsiya tomoshabinlarni chalg'itishi mumkin.
-                    Animatsiyalar ma'lumotni bosqichma-bosqich ko'rsatish va muhim nuqtalarga
-                    e'tiborni jalb qilish uchun juda foydali.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="slayd">
-        <div class="container">
-            <h1 class="slayd__title">Slaydlar bilan ishlash</h1>
-            <ul class="slayd__list">
-                <!-- 1. Yangi slayd qo'shish -->
-                <li class="slayd__item">
-                    <div class="slayd__card">
-                        <button class="slayd__btn1" aria-label="qo'shish">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <line x1="5" y1="22" x2="19" y2="22"></line>
-                            </svg>
-                        </button>
-                        <div class="slayd__info">
-                            <h2 class="slayd__item-title">Yangi slayd qo'shish</h2>
-                            <p class="slayd__text">Chap tomondagi slaydlar minyaturasi pastida "+" tugmasini bosish
-                                orqali yangi slayd qo'shing.</p>
-                        </div>
-                    </div>
-                </li>
-                <!-- 2. Slaydni nusxalash -->
-                <li class="slayd__item">
-                    <div class="slayd__card">
-                        <button class="slayd__btn2" aria-label="nusxalash">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                        </button>
-                        <div class="slayd__info">
-                            <h2 class="slayd__item-title">Slaydni nusxalash</h2>
-                            <p class="slayd__text">Slayd ustida sichqonchaning o'ng tugmasini bosib, "Duplicate page" ni
-                                tanlang.</p>
-                        </div>
-                    </div>
-                </li>
-                <!-- 3. Slaydni o'chirish -->
-                <li class="slayd__item">
-                    <div class="slayd__card">
-                        <button class="slayd__btn3" aria-label="o'chirish">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="3 6 5 6 21 6"></polyline>
-                                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
-                                <path d="M10 11v6"></path>
-                                <path d="M14 11v6"></path>
-                                <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path>
-                            </svg>
-                        </button>
-                        <div class="slayd__info">
-                            <h2 class="slayd__item-title">Slaydni o'chirish</h2>
-                            <p class="slayd__text">Slayd ustida o'ng tugmani bosib, "Delete page" ni tanlang.</p>
-                        </div>
-                    </div>
-                </li>
-                <!-- 4. Slaydlar tartibini o'zgartirish (keng karta) -->
-                <li class="slayd__item">
-                    <div class="slayd__card slayd__card--wide">
-                        <button class="slayd__btn4" aria-label="tartibni o'zgartirish">➔</button>
-                        <div class="slayd__info">
-                            <h2 class="slayd__item-title">Slaydlar tartibini o'zgartirish</h2>
-                            <p class="slayd__text">Slayd minyaturasini sudrab, yangi joyga ko'chiring.</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <p class="slayd__note">
-                Slaydlar bilan samarali ishlash taqdimotingizni mantiqiy tarzda tashkil qilishga yordam beradi.
-                Har bir slayd uchun aniq maqsad belgilang va ularni mavzularingizni ketma-ket ochib beradigan tartibda
-                joylashtiring.
-                Kichik ko'rinmalar paneli taqdimotingizning umumiy ko'rinishini nazorat qilishga yordam beradi.
-            </p>
-        </div>
-    </div>
-    <script src="./js.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+      const foundUser = users.find(u => u.u === username && u.p === parol);
+
+      if (foundUser) {
+        urinishSoni = 0;
+        
+        // Auth ma'lumotlarini saqlash
+        const authData = {
+          username: foundUser.u,
+          role: foundUser.role,
+          loginTime: new Date().toISOString()
+        };
+        
+        // Session storage ga saqlash (brauzer yopilganda o'chadi)
+        sessionStorage.setItem('eduTrackAuth', JSON.stringify(authData));
+        
+        // Remember me uchun localStorage
+        if (rememberCheck.checked) {
+          localStorage.setItem('rememberedUser', username);
+        } else {
+          localStorage.removeItem('rememberedUser');
+        }
+
+        xabarChiqarish(`✅ Xush kelibsiz, ${foundUser.role}! Yo'naltirilmoqda...`, 'success');
+        
+        // Dashboardga yo'naltirish
+        setTimeout(() => {
+          window.location.href = 'dashboart.html';
+        }, 800);
+        
+      } else {
+        urinishSoni++;
+        const qoldi = 3 - urinishSoni;
+        
+        if (urinishSoni >= 3) {
+          xabarChiqarish('❌ 3 marta xato! 10 soniyaga bloklandi.', 'error');
+          bloklashniBoshlash();
+        } else {
+          xabarChiqarish(`❌ Xato! Urinish: ${urinishSoni}/3. Qolgan: ${qoldi}`, 'error');
+        }
+      }
+    };
+
+    // Sahifa yuklanganda
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedUser = localStorage.getItem('rememberedUser');
+      if (savedUser) {
+        userInput.value = savedUser;
+        rememberCheck.checked = true;
+      }
+      updateStrength();
+      
+      passInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          handleLogin();
+        }
+      });
+    });
+  })();
+</script>
 </body>
-
 </html>
