@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduTrack • Professional Login</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<style>
+  <title>Canva | Professional Login</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236F4E37'/%3E%3Cstop offset='100%25' stop-color='%23321810'/%3E%3C/linearGradient%3E%3ClinearGradient id='steam' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23ffffff' stop-opacity='1'/%3E%3Cstop offset='100%25' stop-color='%23ffffff' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23bg)'/%3E%3Cpath d='M28 42h44v22c0 14-10 24-22 24s-22-10-22-24V42z' fill='%23F5F5F5'/%3E%3Cpath d='M72 48h6c6 0 10 4 10 10s-4 10-10 1<PASSWORD>h-6' fill='none' stroke='%<PASSWORD>' stroke-width='4'/%3E%3Cpath d='M4<PASSWORD> c<PASSWORD>6-5 6-5 1<PASSWORD> s5 6 5 1<PASSWORD>' stroke='url(%<PASSWORD>)' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M5<PASSWORD> c<PASSWORD>6-5 6-5 1<PASSWORD> s5 6 5 1<PASSWORD>' stroke='url(%<PASSWORD>)' stroke-width='3' fill='none' stroke-linecap='round'/%３E%３Cpath d('M6<PASSWORD> c<PASSWORD>6-5 6-5 <PASSWORD>' stroke('url(%<PASSWORD>)') stroke-width('３') fill('none') stroke-linecap('round')/%３E%３C/svg %３E">
+  <link href="https://fonts.googleapis.com/css２?family=Inter:wght@4００;５００;６００;７００&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.０.０-beta３/css/all.min.css">
+  <style>
     * {
       margin: 0;
       padding: 0;
@@ -29,6 +32,7 @@
       -webkit-backdrop-filter: blur(12px);
       width: 100%;
       max-width: 420px;
+      margin-top: 30px;
       padding: 2rem 1.5rem;
       border-radius: 32px;
       box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
@@ -205,6 +209,24 @@
       background: rgba(255, 255, 255, 0.5);
       font-size: 0.9rem;
       word-break: break-word;
+    }
+
+    .user-image-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: -50px;
+      margin-bottom: 15px;
+    }
+
+    .users {
+      width: 150px;
+      height: 150px;
+      /* height uzunroq */
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #1e293b;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      background: white;
     }
 
     .demo-hint {
@@ -525,247 +547,254 @@
         margin-top: 12px;
       }
     }
-
   </style>
 </head>
+
 <body>
+  <div class="login-card">
 
-<div class="login-card">
-  <div class="logo">
-    <i class="fas fa-graduation-cap"></i>
-    <h2>EduTrack</h2>
-  </div>
-  <div class="subhead">Professional kirish tizimi • v2.0</div>
+    <!-- RASM -->
+    <div class="user-image-wrapper">
+      <img class="users" src="./images/image.png" alt="users">
+    </div>
 
-  <!-- Login input -->
-  <div class="input-group">
-    <label>Foydalanuvchi nomi</label>
-    <div class="input-wrapper">
-      <i class="fas fa-user"></i>
-      <input type="text" id="user" placeholder="masalan: admin" autocomplete="username">
+    <div class="logo">
+      <i class="fas fa-graduation-cap"></i>
+      <h2>EduTrack</h2>
+    </div>
+    <div class="subhead">Professional kirish tizimi • v2.0</div>
+
+    <!-- Login input -->
+    <div class="input-group">
+      <label>Foydalanuvchi nomi</label>
+      <div class="input-wrapper">
+        <i class="fas fa-user"></i>
+        <input type="text" id="user" placeholder="masalan: admin" autocomplete="username">
+      </div>
+    </div>
+
+    <!-- Parol input -->
+    <div class="input-group">
+      <label>Parol</label>
+      <div class="input-wrapper">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="pass" placeholder="••••••••" autocomplete="current-password"
+          onkeyup="updateStrength()">
+        <button class="toggle-password" type="button" onclick="togglePassword()">
+          <i class="far fa-eye" id="toggleIcon"></i>
+        </button>
+      </div>
+      <div class="strength-bar">
+        <div id="strengthFill"></div>
+      </div>
+      <div class="strength-text" id="strengthLabel"></div>
+    </div>
+
+    <div class="options">
+      <label class="checkbox-label">
+        <input type="checkbox" id="remember"> <span>Eslab qolish</span>
+      </label>
+    </div>
+
+    <button class="login-btn" onclick="handleLogin()">
+      <i class="fas fa-arrow-right-to-bracket"></i> Tizimga kirish
+    </button>
+
+    <div id="msg">
+      <i class="fas fa-shield-alt"></i>  Login va parolni kiriting
+    </div>
+
+
+    <div class="demo-hint">
+      <details>
+        <summary><i class="fas fa-key"></i> Demo loginlar (bosish)</summary>
+        <ul>
+          <li><b>admin</b> / Admin2026</li>
+          <li><b>teacher</b> / Teach2026</li>
+          <li><b>student</b> / Stud2026</li>
+          <li><b>dekan</b> / Dekan2026</li>
+          <li><b>ofis</b> / Ofis2026</li>
+          <li><b>itadmin</b> / IT2026</li>
+          <li><b>magistr</b> / Mag2026</li>
+          <li><b>tyutor</b> / Tutor2026</li>
+          <li><b>parent</b> / Parent2026</li>
+        </ul>
+      </details>
     </div>
   </div>
 
-  <!-- Parol input -->
-  <div class="input-group">
-    <label>Parol</label>
-    <div class="input-wrapper">
-      <i class="fas fa-lock"></i>
-      <input type="password" id="pass" placeholder="••••••••" autocomplete="current-password" onkeyup="updateStrength()">
-      <button class="toggle-password" type="button" onclick="togglePassword()">
-        <i class="far fa-eye" id="toggleIcon"></i>
-      </button>
-    </div>
-    <div class="strength-bar">
-      <div id="strengthFill"></div>
-    </div>
-    <div class="strength-text" id="strengthLabel"></div>
-  </div>
+  <script>
+    (function () {
+      // ---------- Foydalanuvchilar bazasi ----------
+      const users = [
+        { u: "admin", p: "Admin2026", role: "Admin" },
+        { u: "teacher", p: "Teach2026", role: "O'qituvchi" },
+        { u: "student", p: "Stud2026", role: "Talaba" },
+        { u: "dekan", p: "Dekan2026", role: "Dekan" },
+        { u: "ofis", p: "Ofis2026", role: "O'quv bo'limi" },
+        { u: "itadmin", p: "IT2026", role: "IT Admin" },
+        { u: "magistr", p: "Mag2026", role: "Magistr" },
+        { u: "tyutor", p: "Tutor2026", role: "Tyutor" },
+        { u: "parent", p: "Parent2026", role: "Ota-ona" }
+      ];
 
-  <div class="options">
-    <label class="checkbox-label">
-      <input type="checkbox" id="remember"> <span>Eslab qolish</span>
-    </label>
-  </div>
+      const userInput = document.getElementById('user');
+      const passInput = document.getElementById('pass');
+      const rememberCheck = document.getElementById('remember');
+      const msgDiv = document.getElementById('msg');
+      const strengthFill = document.getElementById('strengthFill');
+      const strengthLabel = document.getElementById('strengthLabel');
+      const toggleIcon = document.getElementById('toggleIcon');
 
-  <button class="login-btn" onclick="handleLogin()">
-    <i class="fas fa-arrow-right-to-bracket"></i> Tizimga kirish
-  </button>
+      let urinishSoni = 0;
+      let bloklangan = false;
+      let blokTimer = null;
+      let qolganVaqt = 0;
 
-  <div id="msg">
-    <i class="fas fa-shield-alt"></i>  Login va parolni kiriting
-</div>
-
-
-  <div class="demo-hint">
-    <details>
-      <summary><i class="fas fa-key"></i> Demo loginlar (bosish)</summary>
-      <ul>
-        <li><b>admin</b> / Admin2026</li>
-        <li><b>teacher</b> / Teach2026</li>
-        <li><b>student</b> / Stud2026</li>
-        <li><b>dekan</b> / Dekan2026</li>
-        <li><b>ofis</b> / Ofis2026</li>
-        <li><b>itadmin</b> / IT2026</li>
-        <li><b>magistr</b> / Mag2026</li>
-        <li><b>tyutor</b> / Tutor2026</li>
-        <li><b>parent</b> / Parent2026</li>
-      </ul>
-    </details>
-  </div>
-</div>
-
-<script>
-  (function(){
-    // ---------- Foydalanuvchilar bazasi ----------
-    const users = [
-      { u: "admin",    p: "Admin2026",  role: "Admin" },
-      { u: "teacher",  p: "Teach2026",  role: "O'qituvchi" },
-      { u: "student",  p: "Stud2026",   role: "Talaba" },
-      { u: "dekan",    p: "Dekan2026",  role: "Dekan" },
-      { u: "ofis",     p: "Ofis2026",   role: "O'quv bo'limi" },
-      { u: "itadmin",  p: "IT2026",     role: "IT Admin" },
-      { u: "magistr",  p: "Mag2026",    role: "Magistr" },
-      { u: "tyutor",   p: "Tutor2026",  role: "Tyutor" },
-      { u: "parent",   p: "Parent2026", role: "Ota-ona" }
-    ];
-
-    const userInput = document.getElementById('user');
-    const passInput = document.getElementById('pass');
-    const rememberCheck = document.getElementById('remember');
-    const msgDiv = document.getElementById('msg');
-    const strengthFill = document.getElementById('strengthFill');
-    const strengthLabel = document.getElementById('strengthLabel');
-    const toggleIcon = document.getElementById('toggleIcon');
-
-    let urinishSoni = 0;
-    let bloklangan = false;
-    let blokTimer = null;
-    let qolganVaqt = 0;
-
-    // Avval login qilinganmi tekshirish
-    const authUser = sessionStorage.getItem('eduTrackAuth');
-    if (authUser) {
-      window.location.href = 'dashboart.html';
-    }
-
-    function xabarChiqarish(text, type = 'info') {
-      msgDiv.innerHTML = text;
-      if (type === 'success') {
-        msgDiv.style.color = '#0b5e42';
-        msgDiv.style.background = '#d1fae5';
-      } else if (type === 'error') {
-        msgDiv.style.color = '#b91c1c';
-        msgDiv.style.background = '#fee2e2';
-      } else {
-        msgDiv.style.color = '#1e293b';
-        msgDiv.style.background = 'rgba(255,255,255,0.5)';
+      // Avval login qilinganmi tekshirish
+      const authUser = sessionStorage.getItem('eduTrackAuth');
+      if (authUser) {
+        window.location.href = 'dashboard.html';
       }
-    }
 
-    window.updateStrength = function() {
-      const p = passInput.value;
-      let ball = 0;
-      if (p.length >= 8) ball++;
-      if (/[A-Z]/.test(p)) ball++;
-      if (/[0-9]/.test(p)) ball++;
-      if (/[!@#$%^&*]/.test(p)) ball++;
-
-      let foiz = 0, label = '', color = '#e2e8f0';
-      if (p.length === 0) {
-        foiz = 0; label = 'Parolni kiriting'; color = '#cbd5e1';
-      } else if (ball <= 1) {
-        foiz = 30; label = 'Kuchsiz parol'; color = '#ef4444';
-      } else if (ball === 2) {
-        foiz = 60; label = 'O\'rtacha parol'; color = '#f59e0b';
-      } else {
-        foiz = 100; label = 'Kuchli parol ✓'; color = '#10b981';
+      function xabarChiqarish(text, type = 'info') {
+        msgDiv.innerHTML = text;
+        if (type === 'success') {
+          msgDiv.style.color = '#0b5e42';
+          msgDiv.style.background = '#d1fae5';
+        } else if (type === 'error') {
+          msgDiv.style.color = '#b91c1c';
+          msgDiv.style.background = '#fee2e2';
+        } else {
+          msgDiv.style.color = '#1e293b';
+          msgDiv.style.background = 'rgba(255,255,255,0.5)';
+        }
       }
-      strengthFill.style.width = foiz + '%';
-      strengthFill.style.background = color;
-      strengthLabel.textContent = label;
-      strengthLabel.style.color = color;
-    };
 
-    window.togglePassword = function() {
-      const type = passInput.type === 'password' ? 'text' : 'password';
-      passInput.type = type;
-      toggleIcon.className = type === 'password' ? 'far fa-eye' : 'far fa-eye-slash';
-    };
+      window.updateStrength = function () {
+        const p = passInput.value;
+        let ball = 0;
+        if (p.length >= 8) ball++;
+        if (/[A-Z]/.test(p)) ball++;
+        if (/[0-9]/.test(p)) ball++;
+        if (/[!@#$%^&*]/.test(p)) ball++;
 
-    function bloklashniBoshlash() {
-      if (bloklangan) return;
-      bloklangan = true;
-      qolganVaqt = 10;
-      if (blokTimer) clearInterval(blokTimer);
-      
-      blokTimer = setInterval(() => {
-        if (qolganVaqt <= 0) {
-          clearInterval(blokTimer);
-          blokTimer = null;
-          bloklangan = false;
+        let foiz = 0, label = '', color = '#e2e8f0';
+        if (p.length === 0) {
+          foiz = 0; label = 'Parolni kiriting'; color = '#cbd5e1';
+        } else if (ball <= 1) {
+          foiz = 30; label = 'Kuchsiz parol'; color = '#ef4444';
+        } else if (ball === 2) {
+          foiz = 60; label = 'O\'rtacha parol'; color = '#f59e0b';
+        } else {
+          foiz = 100; label = 'Kuchli parol ✓'; color = '#10b981';
+        }
+        strengthFill.style.width = foiz + '%';
+        strengthFill.style.background = color;
+        strengthLabel.textContent = label;
+        strengthLabel.style.color = color;
+      };
+
+      window.togglePassword = function () {
+        const type = passInput.type === 'password' ? 'text' : 'password';
+        passInput.type = type;
+        toggleIcon.className = type === 'password' ? 'far fa-eye' : 'far fa-eye-slash';
+      };
+
+      function bloklashniBoshlash() {
+        if (bloklangan) return;
+        bloklangan = true;
+        qolganVaqt = 10;
+        if (blokTimer) clearInterval(blokTimer);
+
+        blokTimer = setInterval(() => {
+          if (qolganVaqt <= 0) {
+            clearInterval(blokTimer);
+            blokTimer = null;
+            bloklangan = false;
+            urinishSoni = 0;
+            xabarChiqarish('<i class="fas fa-unlock-alt"></i> Blok ochildi. Qayta urinib ko\'ring.', 'info');
+          } else {
+            xabarChiqarish(`<i class="fas fa-hourglass-half"></i> Bloklangan! ${qolganVaqt} soniya kuting.`, 'error');
+            qolganVaqt--;
+          }
+        }, 1000);
+      }
+
+      window.handleLogin = function () {
+        if (bloklangan) {
+          xabarChiqarish(`⛔ Bloklangan. ${qolganVaqt} soniya kuting.`, 'error');
+          return;
+        }
+
+        const username = userInput.value.trim();
+        const parol = passInput.value;
+
+        if (!username || !parol) {
+          xabarChiqarish('<i class="fas fa-exclamation-triangle"></i> Login va parolni to\'ldiring!', 'error');
+          return;
+        }
+
+        const foundUser = users.find(u => u.u === username && u.p === parol);
+
+        if (foundUser) {
           urinishSoni = 0;
-          xabarChiqarish('<i class="fas fa-unlock-alt"></i> Blok ochildi. Qayta urinib ko\'ring.', 'info');
+
+          // Auth ma'lumotlarini saqlash
+          const authData = {
+            username: foundUser.u,
+            role: foundUser.role,
+            loginTime: new Date().toISOString()
+          };
+
+          // Session storage ga saqlash (brauzer yopilganda o'chadi)
+          sessionStorage.setItem('eduTrackAuth', JSON.stringify(authData));
+
+          // Remember me uchun localStorage
+          if (rememberCheck.checked) {
+            localStorage.setItem('rememberedUser', username);
+          } else {
+            localStorage.removeItem('rememberedUser');
+          }
+
+          xabarChiqarish(`✅ Xush kelibsiz, ${foundUser.role}! Yo'naltirilmoqda...`, 'success');
+
+          // Dashboardga yo'naltirish
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 800);
+
         } else {
-          xabarChiqarish(`<i class="fas fa-hourglass-half"></i> Bloklangan! ${qolganVaqt} soniya kuting.`, 'error');
-          qolganVaqt--;
+          urinishSoni++;
+          const qoldi = 3 - urinishSoni;
+
+          if (urinishSoni >= 3) {
+            xabarChiqarish('❌ 3 marta xato! 10 soniyaga bloklandi.', 'error');
+            bloklashniBoshlash();
+          } else {
+            xabarChiqarish(`❌ Xato! Urinish: ${urinishSoni}/3. Qolgan: ${qoldi}`, 'error');
+          }
         }
-      }, 1000);
-    }
+      };
 
-    window.handleLogin = function() {
-      if (bloklangan) {
-        xabarChiqarish(`⛔ Bloklangan. ${qolganVaqt} soniya kuting.`, 'error');
-        return;
-      }
-
-      const username = userInput.value.trim();
-      const parol = passInput.value;
-
-      if (!username || !parol) {
-        xabarChiqarish('<i class="fas fa-exclamation-triangle"></i> Login va parolni to\'ldiring!', 'error');
-        return;
-      }
-
-      const foundUser = users.find(u => u.u === username && u.p === parol);
-
-      if (foundUser) {
-        urinishSoni = 0;
-        
-        // Auth ma'lumotlarini saqlash
-        const authData = {
-          username: foundUser.u,
-          role: foundUser.role,
-          loginTime: new Date().toISOString()
-        };
-        
-        // Session storage ga saqlash (brauzer yopilganda o'chadi)
-        sessionStorage.setItem('eduTrackAuth', JSON.stringify(authData));
-        
-        // Remember me uchun localStorage
-        if (rememberCheck.checked) {
-          localStorage.setItem('rememberedUser', username);
-        } else {
-          localStorage.removeItem('rememberedUser');
+      // Sahifa yuklanganda
+      window.addEventListener('DOMContentLoaded', () => {
+        const savedUser = localStorage.getItem('rememberedUser');
+        if (savedUser) {
+          userInput.value = savedUser;
+          rememberCheck.checked = true;
         }
+        updateStrength();
 
-        xabarChiqarish(`✅ Xush kelibsiz, ${foundUser.role}! Yo'naltirilmoqda...`, 'success');
-        
-        // Dashboardga yo'naltirish
-        setTimeout(() => {
-          window.location.href = 'dashboart.html';
-        }, 800);
-        
-      } else {
-        urinishSoni++;
-        const qoldi = 3 - urinishSoni;
-        
-        if (urinishSoni >= 3) {
-          xabarChiqarish('❌ 3 marta xato! 10 soniyaga bloklandi.', 'error');
-          bloklashniBoshlash();
-        } else {
-          xabarChiqarish(`❌ Xato! Urinish: ${urinishSoni}/3. Qolgan: ${qoldi}`, 'error');
-        }
-      }
-    };
-
-    // Sahifa yuklanganda
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedUser = localStorage.getItem('rememberedUser');
-      if (savedUser) {
-        userInput.value = savedUser;
-        rememberCheck.checked = true;
-      }
-      updateStrength();
-      
-      passInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          handleLogin();
-        }
+        passInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            handleLogin();
+          }
+        });
       });
-    });
-  })();
-</script>
+    })();
+  </script>
 </body>
+
 </html>
